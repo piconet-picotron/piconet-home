@@ -5,7 +5,7 @@ _init = function(self, explrorer)
 	clr = 2
 end
 _draw = function(self, explorer)
-	cls(clr or 7)
+	cls(clr or 9)
 end
 _update = function(self, explorer)
 
