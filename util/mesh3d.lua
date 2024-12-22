@@ -26,7 +26,7 @@ function new_mesh(faces,transformation)
 end
 
 function parse_obj_file(filename, scale)--very barebones for the time being
-	local file = fetch(filename)
+	local file = fetch_web_only(filename)
 	local list = split(file,"\n")
 	local verts = {}
 	local faces = {}
