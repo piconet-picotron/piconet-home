@@ -1,7 +1,8 @@
 --[[pod_format="raw",created="2024-03-18 19:20:44",modified="2024-03-19 05:24:12",revision=1163]]
-include "lib/face.lua"
-include "lib/obj3d.lua"
-include "lib/util3d.lua"
+local utilpath = "https://raw.githubusercontent.com/piconet-picotron/piconet-home/main/util/"
+webinclude(utilpath.."face.lua")
+webinclude(utilpath.."obj3d.lua")
+webinclude(utilpath.."util3d.lua")
 
 function new_mesh(faces,transformation)
 	local transformation = transformation or new_transform()
