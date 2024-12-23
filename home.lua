@@ -6,6 +6,8 @@ _init = function(self, explrorer)
 end
 _draw = function(self, explorer)
 	cls(clr or 9)
+	color(7)
+	print("hello! this is a test page")
 end
 _update = function(self, explorer)
 
