@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-12-17 23:09:26",modified="2025-03-22 20:12:39",revision=9338]]
+--[[pod_format="raw",created="2024-12-17 23:09:26",modified="2025-03-22 20:48:36",revision=9339]]
 
 title = "Browse the 'Net!"
 
@@ -111,7 +111,7 @@ card_holder = gui:attach{x=0,y=0,width=200,height=2100,
 			self:detach(c)
 		end
 		self.cards = {}
-		local result = send_piconet_request("B+"..self.current_start.."*"..self.current_start+self.range-1 .."*".."T+")
+		local result = send_piconet_request("B+"..self.current_start.."*"..self.current_start+self.range-1 .."*".."T-")
 		
 		local allsitesinfo = split(result,"\n")
 		local ypos = 2
