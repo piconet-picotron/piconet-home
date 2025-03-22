@@ -1,5 +1,5 @@
 --[[pod_format="raw",created="2024-03-20 06:16:57",modified="2025-03-22 20:17:47",revision=16286]]
-webinclude"https://raw.githubusercontent.com/May0san/piconetdemo/refs/heads/main/lib3d.lua"
+webinclude"https://raw.githubusercontent.com/piconet-picotron/piconet-home/refs/heads/main/lib3d.lua"
 rotation_order = {"z", "y", "x", "t"}
 
 webpath = "https://raw.githubusercontent.com/piconet-picotron/piconet-home/main/"
