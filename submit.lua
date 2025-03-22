@@ -1,5 +1,5 @@
 --[[pod_format="raw",created="2024-12-28 01:40:48",modified="2025-03-22 20:12:39",revision=9321]]
-webinclude"https://raw.githubusercontent.com/May0san/piconetdemo/refs/heads/main/lib3d.lua"
+webinclude"https://raw.githubusercontent.com/piconet-picotron/piconet-home/refs/heads/main/lib3d.lua"
 rotation_order = {"z", "x", "y", "t"}
 
 cube_model = unpod("b64:bHo0AMoBAADMBQAAgCJ2IC0wLjUwAQAPCgABKFxuIQAPIAAND0EAItBmIDMvMyAxLzEgNC80DwAACwAyMi8yDwAfdjQAAAUTAAkfAA4eAA89ACvQZiA3LzcgNS81IDgvOA8AAAsAMjYvNg8AD-cAAw-2AAwOHwAPPwAk8AJmIDExLzExIDkvOSAxMi8xMhMAAQ0ARDAvMTATAA--AAIfLQABAg8fAAwfLT8AIPEEZiAxNS8xNSAxMy8xMyAxNi8xNhUAAg8ARDQvMTQVAA-tAAwvdiAeAAcPPQBBHy3jAAwPPwA28gNmIDE5LzE5IDE3LzE3IDIwLzIVAAEPAFYxOC8xOBUA8QEyMy8yMyAyMS8yMSAyNC8yKgMDDwBHMi8yMhUAADMABD8AMjIvMnYBAg8ARjQvMjUVAAA-ABE4WgASN4oAARUAAg8AAoQAAhUACOcADvEACecADh8ADz8ARB8tQAAMHy1BADjxA2YgMjcvMzEgMjUvMjkgMjgvM3ADAw8ARjYvMzAVAPIBMzEvMzUgMjkvMzMgMzIvM2kBAg8ARzAvMzQVAAAzAAM-AAAbAAFkBAMPAEcyLzM3FQBBOS80MFoAEjmKAARpABQ5hABQNy8zMSI=")
