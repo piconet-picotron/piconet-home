@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-03-20 06:16:57",modified="2025-03-22 20:17:47",revision=16286]]
+--[[pod_format="raw",created="2024-03-20 06:16:57",modified="2025-03-22 22:08:32",revision=16288]]
 webinclude"https://raw.githubusercontent.com/piconet-picotron/piconet-home/refs/heads/main/lib3d.lua"
 rotation_order = {"z", "y", "x", "t"}
 
@@ -34,12 +34,12 @@ function _init()
 	buttons = {
 		attach_3d_button(gui,vec(100,0,0),btn_browse,
 			function()
-				web_visit("pntp:piconet.p/browse.lua")
+				web_visit("pntp://piconet.p/browse.lua")
 			end
 		),
 		attach_3d_button(gui,vec(-100,0,0),btn_submit,
 			function()
-				web_visit("pntp:piconet.p/submit.lua")
+				web_visit("pntp://piconet.p/submit.lua")
 			end
 		),
 		attach_3d_button(gui,vec(0,-100,0),btn_info,
