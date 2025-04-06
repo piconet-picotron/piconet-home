@@ -1,3 +1,4 @@
+--WHITELIST:
 	USERDATA = 0,
 	abs = 0,
 	add = 0,
@@ -78,6 +79,9 @@
 	utf8 = 0, -- ok, I think
 	vec = 0,
 
+-- EXPLICITLY EXCLUDED FROM WHITELIST:
+-- (those that say "idk" after are ones I'm uncertain about, either because I don't know what it does or because I'm not sure if it could be a security issue.
+-- I've found it fairly difficult to find extensive documentation for Picotron's API and I haven't gotten around to exploring everything quite yet.)
 --	apply_delta = 0,
 --	camera = 0,
 --	cd = 0,
