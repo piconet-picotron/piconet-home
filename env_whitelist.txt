@@ -90,7 +90,7 @@
 --	cocreate = 0, -- idk if this could cause problems, what environment will it run in?
 --	collectgarbage = 0, -- idk
 --	coresume = 0, -- same as cocreate
--- coroutine = 0, -- same
+--	coroutine = 0, -- same
 --	cp = 0,
 --	create_process = 0,
 --	create_undo_stack = 0, -- idk
@@ -109,7 +109,7 @@
 --	get = 0, -- idk
 --	get_clipboard = 0, -- kinda sketchy
 --	get_display = 0, -- idk
--- get_draw_target = 0, -- idk
+--	get_draw_target = 0, -- idk
 --	get_spr = 0,
 --	getmetatable = 0, -- idk
 --	include = 0,
