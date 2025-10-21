@@ -1,165 +1,166 @@
+--[[pod_format="raw",created="2025-10-20 17:28:33",modified="2025-10-20 23:46:03",revision=3]]
 --WHITELIST:
-	USERDATA = 0,
-	abs = 0,
-	add = 0,
-	all = 0,
-	assert = 0,
-	atan2 = 0,
-	blit = 0,
-	btn = 0,
-	ceil = 0,
-	chr = 0,
-	circ = 0,
-	circfill = 0,
-	cls = 0,
-	color = 0,
-	cos = 0,
-	count = 0,
-	create_gui = 0,
-	create_meta_key = 0,
-	date = 0,
-	del = 0,
-	deli = 0,
-	fillp = 0,
-	flr = 0,
-	foreach = 0,
-	key = 0,
-	keyp = 0,
-	line = 0,
-	load = 0, -- should be fine?
-	map = 0,
-	math = 0,
-	max = 0,
-	mid = 0,
-	min = 0,
-	mouselock = 0, -- should be ok
-	music = 0, -- pretty sure this is fine
-	notify = 0,
-	ord = 0,
-	oval = 0,
-	ovalfill = 0,
-	pairs = 0,
-	pal = 0,
-	palt = 0,
-	peektext = 0, -- might be sketchy to allow the site to read all keypresses? allowing for now
-	pget = 0, --unsure about this one, it's a little sketchy but should be ok.
-	pod = 0,
-	print = 0,
-	printh = 0,
-	pset = 0,
-	readtext = 0, -- sketchy? see peektext
-	rect = 0,
-	rectfill = 0,
-	reset = 0,
-	rnd = 0,
-	set_clipboard = 0,
-	set_draw_target = 0,
-	sfx = 0, -- ok, probably
-	sgn = 0,
-	sin = 0,
-	split = 0,
-	spr = 0,
-	sqrt = 0,
-	sspr = 0,
-	string = 0,
-	sub = 0,
-	table = 0,
-	theme = 0,
-	time = 0,
-	tline = 0,
-	tline3d = 0,
-	tonum = 0,
-	tonumber = 0,
-	tostr = 0,
-	tostring = 0,
-	type = 0, -- fine, I think
-	unmap = 0,
-	unpod = 0,
-	userdata = 0,
-	utf8 = 0, -- ok, I think
-	vec = 0,
+	USERDATA
+	abs
+	add
+	all
+	assert
+	atan2
+	blit
+	btn
+	ceil
+	chr
+	circ
+	circfill
+	cls
+	color
+	cos
+	count
+	create_gui
+	create_meta_key
+	date
+	del
+	deli
+	fillp
+	flr
+	foreach
+	key
+	keyp
+	line
+	load -- should be fine?
+	map
+	math
+	max
+	mid
+	min
+	mouselock -- should be ok
+	music -- pretty sure this is fine
+	notify
+	ord
+	oval
+	ovalfill
+	pairs
+	pal
+	palt
+	peektext -- might be sketchy to allow the site to read all keypresses? allowing for now
+	pget --unsure about this one, it's a little sketchy but should be ok.
+	pod
+	print
+	printh
+	pset
+	readtext -- sketchy? see peektext
+	rect
+	rectfill
+	reset
+	rnd
+	set_clipboard
+	set_draw_target
+	sfx -- ok, probably
+	sgn
+	sin
+	split
+	spr
+	sqrt
+	sspr
+	string
+	sub
+	table
+	theme
+	time
+	tline
+	tline3d
+	tonum
+	tonumber
+	tostr
+	tostring
+	type -- fine, I think
+	unmap
+	unpod
+	userdata
+	utf8 -- ok, I think
+	vec
 
 -- EXPLICITLY EXCLUDED FROM WHITELIST:
 -- (those that say "idk" after are ones I'm uncertain about, either because I don't know what it does or because I'm not sure if it could be a security issue.
 -- I've found it fairly difficult to find extensive documentation for Picotron's API and I haven't gotten around to exploring everything quite yet.)
---	apply_delta = 0,
---	camera = 0,
---	cd = 0,
---	clear_key = 0, -- idk
---	clip = 0, -- idk
---	cocreate = 0, -- idk if this could cause problems, what environment will it run in?
---	collectgarbage = 0, -- idk
---	coresume = 0, -- same as cocreate
---	coroutine = 0, -- same
---	cp = 0,
---	create_process = 0,
---	create_undo_stack = 0, -- idk
---	cursor = 0, -- idk
---	debug = 0,
---	env = 0,
---	error = 0, -- idk
---	exit = 0,
---	fetch = 0,
---	fetch_metadata = 0,
---	fget = 0,	-- idk
---	flip = 0, -- idk
---	fset = 0, -- idk
---	fstat = 0, -- idk
---	fullpath = 0,
---	get = 0, -- idk
---	get_clipboard = 0, -- kinda sketchy
---	get_display = 0, -- idk
---	get_draw_target = 0, -- idk
---	get_spr = 0,
---	getmetatable = 0, -- idk
---	include = 0,
---	ipairs = 0, -- idk
---	ls = 0,
---	memcpy = 0, -- idk
---	memmap = 0, -- idk
---	memset = 0, -- idk
---	menuitem = 0,
---	mget = 0, -- idk
---	mkdir = 0,
---	mount = 0, -- idk
---	mouse = 0, -- want to define a custom mouse function because of offsets
---	mset = 0, -- idk
---	mv = 0,
---	next = 0, -- idk
---	note = 0, -- idk
---	on_event = 0, -- pretty sure I don't want this whitelisted, could intercept events it shouldn't have access to?
---	pack = 0, -- this might be okay?
---	pcall = 0, -- idk
---	peek = 0, -- pretty sure peeks shouldn't be whitelisted, could potentially be used to access to users filesystem, right?
---	peek2 = 0,
---	peek4 = 0,
---	peek8 = 0,
---	pid = 0,
---	poke = 0, -- pretty sure pokes shouldn't be whitelisted either
---	poke2 = 0,
---	poke4 = 0,
---	poke8 = 0,
---	pwd = 0, -- idk
---	rawequal = 0, -- idk
---	rawget = 0, -- idk
---	rawlen = 0, -- idk
---	rawset = 0, -- idk
---	rm = 0,
---	select = 0, -- idk
---	send_message = 0, -- idk
---	set = 0, -- idk
---	set_spr = 0, -- this might be okay actually
---	setmetatable = 0, -- idk
---	srand = 0, -- idk
---	stat = 0, --idk
---	stop = 0,
---	store = 0,
---	store_metadata = 0,
---	t = 0, -- idk
---	tokenoid = 0, -- idk
---	unpack = 0, -- pretty sure this is okay too? will look into it.
---	vid = 0,
---	warn = 0, -- idk
---	window = 0,
---	wrangle_working_file = 0,
---	yield = 0
+--	apply_delta
+--	camera
+--	cd
+--	clear_key -- idk
+--	clip -- idk
+--	cocreate -- idk if this could cause problems, what environment will it run in?
+--	collectgarbage -- idk
+--	coresume -- same as cocreate
+--	coroutine -- same
+--	cp
+--	create_process
+--	create_undo_stack -- idk
+--	cursor -- idk
+--	debug
+--	env
+--	error -- idk
+--	exit
+--	fetch
+--	fetch_metadata
+--	fget -- idk
+--	flip -- idk
+--	fset -- idk
+--	fstat -- idk
+--	fullpath
+--	get -- idk
+--	get_clipboard -- kinda sketchy
+--	get_display -- idk
+--	get_draw_target -- idk
+--	get_spr
+--	getmetatable -- idk
+--	include
+--	ipairs -- idk
+--	ls
+--	memcpy -- idk
+--	memmap -- idk
+--	memset -- idk
+--	menuitem
+--	mget -- idk
+--	mkdir
+--	mount -- idk
+--	mouse -- want to define a custom mouse function because of offsets
+--	mset -- idk
+--	mv
+--	next -- idk
+--	note -- idk
+--	on_event -- pretty sure I don't want this whitelisted, could intercept events it shouldn't have access to?
+--	pack -- this might be okay?
+--	pcall -- idk
+--	peek -- pretty sure peeks shouldn't be whitelisted, could potentially be used to access to users filesystem, right?
+--	peek2
+--	peek4
+--	peek8
+--	pid
+--	poke -- pretty sure pokes shouldn't be whitelisted either
+--	poke2
+--	poke4
+--	poke8
+--	pwd -- idk
+--	rawequal -- idk
+--	rawget -- idk
+--	rawlen -- idk
+--	rawset -- idk
+--	rm
+--	select -- idk
+--	send_message -- idk
+--	set -- idk
+--	set_spr -- this might be okay actually
+--	setmetatable -- idk
+--	srand -- idk
+--	stat --idk
+--	stop
+--	store
+--	store_metadata
+--	t -- idk
+--	tokenoid -- idk
+--	unpack -- pretty sure this is okay too? will look into it.
+--	vid
+--	warn -- idk
+--	window
+--	wrangle_working_file
+--	yield
