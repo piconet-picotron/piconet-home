@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-12-28 01:40:48",modified="2025-03-22 20:12:39",revision=9321]]
+--[[pod_format="raw",created="2024-12-28 01:40:48",modified="2025-11-12 23:36:24",revision=9385]]
 webinclude"https://raw.githubusercontent.com/piconet-picotron/piconet-home/refs/heads/main/lib3d.lua"
 rotation_order = {"z", "x", "y", "t"}
 
@@ -110,12 +110,12 @@ interface = {
 function create_gui3d(props)
 	function props:set_rot(rx,ry,rz,rx2,ry2,rz2)
 		local pos = self.og_pos
-		local trans_pos = pos:matmul3d(mat_transformation(vec(center_x-(self.width/2)+1,center_y-(self.height/2)+1,0), vec(rx+rx2,ry+ry2,rz+rz2)))
-		self.x = trans_pos.x
-		self.y = trans_pos.y
-		self.z = trans_pos.z
+		local trans_pos = pos:matmul3d(mat_transformation(vec(center_x-(self.width*0.5)+1,center_y-(self.height*0.5)+1,0), vec(rx+rx2,ry+ry2,rz+rz2)))
 		self.width = self.og_width * abs(math.cos(ry+self.norm_ry))
 		self.height = self.og_height * abs(math.cos(rx+self.norm_rx))
+		self.x = trans_pos.x+self.width*0.5-center_x
+		self.y = trans_pos.y+self.height*0.5-center_y
+		self.z = trans_pos.z
 	end
 	props.norm_rx = props.norm_rx or 0
 	props.norm_ry = props.norm_ry or 0
@@ -1054,14 +1054,14 @@ ed_tags_menu = create_gui3d({
 			for i=1,#txtcontent do
 				local s = txtcontent[i]
 				if #s > tag_len then
-					txtcontent[i] = sub(s,0,tag_len)
+					txtcontent[i] = sub(s,1,tag_len)
 					changed = true
 				end
 				local invalid = domain_name_is_invalid(s)
-				if invalid then
+				if invalid and type(invalid) != "number" then
 					self.invalid_tags[i] = invalid
 				end
-				debug = invalid
+--				debug = invalid
 			end
 			if changed then
 				self.tags_ed:set_text(txtcontent)
