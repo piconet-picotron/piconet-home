@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-12-28 01:40:48",modified="2025-11-12 23:36:24",revision=9385]]
+--[[pod_format="raw",created="2024-12-28 01:40:48",modified="2025-11-14 04:20:52",revision=9393]]
 webinclude"https://raw.githubusercontent.com/piconet-picotron/piconet-home/refs/heads/main/lib3d.lua"
 rotation_order = {"z", "x", "y", "t"}
 
@@ -1041,6 +1041,7 @@ ed_tags_menu = create_gui3d({
 	post_switch=function(self)
 		self.tags_ed:set_keyboard_focus(true)
 	end,
+	badchar = false,
 	update=function(self)
 		local txtcontent = self.tags_ed:get_text()
 		local edtxt = string.lower(table.concat(txtcontent,"\n"))
@@ -1051,6 +1052,7 @@ ed_tags_menu = create_gui3d({
 				changed = true
 			end
 			self.invalid_tags = {}
+			self.badchar = false
 			for i=1,#txtcontent do
 				local s = txtcontent[i]
 				if #s > tag_len then
@@ -1060,6 +1062,7 @@ ed_tags_menu = create_gui3d({
 				local invalid = domain_name_is_invalid(s)
 				if invalid and type(invalid) != "number" then
 					self.invalid_tags[i] = invalid
+					self.badchar = true
 				end
 --				debug = invalid
 			end
@@ -1076,7 +1079,7 @@ ed_tags_menu = create_gui3d({
 			tags = nil
 		end
 		self.clear = false
-		if tags == nil or tags == oldtags then
+		if tags == nil or tags == oldtags or self.badchar then
 			self.yesbtn.ghost = true
 		else
 			self.yesbtn.ghost = false
