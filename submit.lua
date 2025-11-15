@@ -1,4 +1,4 @@
---[[pod_format="raw",created="2024-12-28 01:40:48",modified="2025-11-14 04:20:52",revision=9393]]
+--[[pod_format="raw",created="2024-12-28 01:40:48",modified="2025-11-15 21:08:42",revision=9395]]
 webinclude"https://raw.githubusercontent.com/piconet-picotron/piconet-home/refs/heads/main/lib3d.lua"
 rotation_order = {"z", "x", "y", "t"}
 
@@ -110,7 +110,7 @@ interface = {
 function create_gui3d(props)
 	function props:set_rot(rx,ry,rz,rx2,ry2,rz2)
 		local pos = self.og_pos
-		local trans_pos = pos:matmul3d(mat_transformation(vec(center_x-(self.width*0.5)+1,center_y-(self.height*0.5)+1,0), vec(rx+rx2,ry+ry2,rz+rz2)))
+		local trans_pos = pos:matmul3d(mat_transformation(vec(center_x-(self.width*0.5)+0.5,center_y-(self.height*0.5)+0.5,0), vec(rx+rx2,ry+ry2,rz+rz2)))
 		self.width = self.og_width * abs(math.cos(ry+self.norm_ry))
 		self.height = self.og_height * abs(math.cos(rx+self.norm_rx))
 		self.x = trans_pos.x+self.width*0.5-center_x
