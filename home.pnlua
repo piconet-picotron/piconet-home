@@ -34,12 +34,12 @@ function _init()
 	buttons = {
 		attach_3d_button(gui,vec(100,0,0),btn_browse,
 			function()
-				web_visit("pntp://piconet.p/browse.lua")
+				web_visit("pntp://piconet.p/browse.pnlua")
 			end
 		),
 		attach_3d_button(gui,vec(-100,0,0),btn_submit,
 			function()
-				web_visit("pntp://piconet.p/submit.lua")
+				web_visit("pntp://piconet.p/submit.pnlua")
 			end
 		),
 		attach_3d_button(gui,vec(0,-100,0),btn_info,

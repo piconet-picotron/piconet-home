@@ -1,3 +1,4 @@
+--[[pod_format="raw",created="2025-11-24 00:55:23",modified="2025-11-24 00:55:23",revision=0]]
 function draw_mesh(mesh, x, y, rx, ry, rz, depth_clrs, gradient_depth, split_half, do_sort)
 --	set_draw_target(mesh.canvas)
 --	cls()
