@@ -1184,9 +1184,6 @@ ed_home_menu = create_gui3d({
 			self.typed_home = edtxt
 			homepage = edtxt
 		end
-		if edtxt == "" then
-			homepage = nil
-		end
 		if homepage == nil or homepage == oldhome then
 			self.yesbtn.ghost = true
 		else
